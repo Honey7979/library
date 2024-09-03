@@ -1,0 +1,115 @@
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+    background-image: url('1_qYE6XgnyxXy9HHOeoQGjTw.jpg');
+    background-size: cover;
+    background-position: center;
+
+  }
+  
+  .container {
+    background-color: rgba(238, 229, 229, 0.5); /* Brown color with 50% transparency */
+    width: 25%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Keep the shadow for some depth */
+}
+
+
+  
+  .form-container {
+      width: 100%;
+  }
+  
+  h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: #333;
+  }
+  
+  .input-group {
+      margin-bottom: 15px;
+      width: 100%;
+  }
+  
+  .input-group input {
+    width: 95%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+    color: rgba(8, 8, 8, 0.9); /* Text color */
+    transition: border 0.3s;
+}
+
+.input-group input::placeholder {
+    color: rgba(17, 16, 16, 0.5); /* Semi-transparent placeholder text */
+}
+
+.input-group input:focus {
+    border-color: rgba(16, 15, 15, 0.8); /* Slightly more opaque border on focus */
+    outline: none;
+}
+
+  
+  .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+  }
+  
+  button {
+      width: 48%;
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  
+  #signupBtn {
+      background-color: #4a90e2;
+      color: #fff;
+  }
+  
+  #signupBtn:hover {
+      background-color: #357abd;
+  }
+  
+  .toggle-btn {
+      background-color: #ddd;
+      color: #333;
+  }
+  
+  .toggle-btn:hover {
+      background-color: #bbb;
+  }
+  
+  p#formMessage {
+      text-align: center;
+      margin-top: 15px;
+      color: red;
+      font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+      .container {
+          padding: 15px;
+      }
+  
+      h2 {
+          font-size: 1.5rem;
+      }
+  
+      button {
+          padding: 8px;
+          font-size: 0.9rem;
+      }
+  }
+  

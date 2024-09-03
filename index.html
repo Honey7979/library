@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="search-bar">
+            <select id="search-category" onchange="toggleSearchOptions()">
+                <option value="book-name">Search by Book Name</option>
+                <option value="genre">Search by Genre</option>
+                <option value="author">Search by Author</option>
+            </select>
+            <input type="text" id="search-input" placeholder="Search by Book Name">
+            <div id="genre-options" class="search-options" style="display: none;">
+                <select id="genre-select">
+                    <option value="">Select Genre</option>
+                    <optgroup label="Fiction">
+                        <option value="literary-fiction">Literary Fiction</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="thriller">Thriller</option>
+                        <option value="science-fiction">Science Fiction</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="historical-fiction">Historical Fiction</option>
+                        <option value="romance">Romance</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="horror">Horror</option>
+                    </optgroup>
+                    <optgroup label="Non-Fiction">
+                        <option value="biography">Biography/Autobiography</option>
+                        <option value="self-help">Self-Help</option>
+                        <option value="memoir">Memoir</option>
+                        <option value="true-crime">True Crime</option>
+                        <option value="travel">Travel</option>
+                        <option value="cookbook">Cookbook</option>
+                        <option value="health-wellness">Health & Wellness</option>
+                        <option value="history">History</option>
+                        <option value="science">Science</option>
+                    </optgroup>
+                    <optgroup label="Poetry">
+                        <option value="epic-poetry">Epic Poetry</option>
+                        <option value="lyric-poetry">Lyric Poetry</option>
+                        <option value="sonnet">Sonnet</option>
+                    </optgroup>
+                    <optgroup label="Graphic Novels/Comics">
+                        <option value="superhero">Superhero</option>
+                        <option value="manga">Manga</option>
+                    </optgroup>
+                    <optgroup label="Young Adult (YA)">
+                        <option value="ya-fiction">YA Fiction</option>
+                        <option value="ya-fantasy-sci-fi">YA Fantasy/Sci-Fi</option>
+                    </optgroup>
+                    <optgroup label="Children's Books">
+                        <option value="picture-books">Picture Books</option>
+                        <option value="early-readers">Early Readers</option>
+                        <option value="middle-grade">Middle Grade</option>
+                    </optgroup>
+                </select>
+            </div>
+            <button aria-label="Search" onclick="search()">Search</button>
+        </div>
+    </header>
+    <main>
+        <section class="background-image">
+            <div class="gif-container">
+                <div class="text-overlay">
+                    <h2>Explore, Discover, Enjoy</h2>
+                    <p>Your personal library, at your fingertips.</p>
+                    <p>Search, borrow, and discover your next favorite read.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <div id="book-container"></div> 
+
+    </main> 
+
+     <!-- Contact Us section -->
+     <section id="contact-section" class="contact"> <!-- Added id for anchor link -->
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <div class="input-pair">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-pair">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <section class="shared-section privacy-policy">
+        <h1>Privacy Policy</h1>
+            <pre>
+                Your privacy is important to us. This Privacy Policy outlines how we collect, use, and protect your personal information when you use our library catalog system.
+                            We may collect personal information such as your name, email address, and library card number when you register or use our system.
+                                We also collect usage data and technical information, including your IP address and browser type, to improve our services.
+                                                        To provide and manage your access to our library catalog system.
+                                                To communicate with you about your account, updates, and other relevant information.
+                                                      To analyze and improve the performance and functionality of our system.
+                                                        We do not sell or rent your personal information to third parties.
+                              We may share your information with service providers who assist us in operating the system, subject to confidentiality agreements.
+                                                We may disclose your information if required by law or to protect our rights and safety.      
+                                We implement reasonable security measures to protect your personal information from unauthorized access, use, or disclosure.
+                                 Despite our efforts, no security system is impenetrable, and we cannot guarantee the absolute security of your information.              
+                You have the right to access, correct, or delete your personal information. To do so, please contact us at <a href="mailto:[contact email]">[contact email]</a>.              
+                                We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.    
+                                                   Your continued use of the system constitutes acceptance of the revised policy.
+                </pre>
+    </section>
+
+    <section class="shared-section terms-of-service">
+        <h1>Terms of Service</h1>
+        <pre>
+                            By using our Library Management System, you agree to be bound by these Terms of Service and all applicable laws and regulations. 
+                                            To use certain features of the Library Management System, you may need to create an account. 
+                You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate.
+                        You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. 
+                                                    You must notify us immediately of any unauthorized use of your account.
+                                        The number of materials you can borrow at one time is subject to the library’s borrowing policy.
+                All borrowed materials must be returned by the due date. Failure to return items on time may result in fines or suspension of borrowing privileges.
+                                            If materials are lost or damaged, you may be charged for the cost of replacement.
+            Your use of the Library Management System is also governed by our Privacy Policy, which outlines how we collect, use, and protect your personal information. 
+        All content, features, and functionality of the Library Management System, including but not limited to text, graphics, logos, and software, are the exclusive property of the 
+                                            library or its licensors and are protected by copyright, trademark, and other applicable laws.
+        We reserve the right to suspend or terminate your access to the Library Management System at any time, without notice, for conduct that we believe violates these Terms of Service, 
+                                                        is harmful to other users of the system, or is harmful to the interests of the library.
+                                                            The Library Management System is provided on an "as is" and "as available" basis. 
+                We make no warranties, express or implied, regarding the operation or availability of the system or the accuracy, completeness, or reliability of the content.
+        </pre>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <h2>Library Management System</h2>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social-media">
+                <a href="#" target="_blank"><img src="fb.png" alt="Facebook"></a>
+                <a href="#" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#" target="_blank"><img src="insta.png" alt="Instagram"></a>
+                <a href="#" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2024 Library Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 
+
+

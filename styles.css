@@ -1,0 +1,670 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Flexbox layout for the body to push footer to the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    background-color: #3b3939;
+    color: #3b3939;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    height: 4rem; 
+    width: 4rem;  
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px; /* Added gap between dropdown, input, and button */
+}
+
+.search-bar select, .search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-bar select {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.search-bar input {
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    flex: 1; /* Allow input to take available space */
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-bar button:hover {
+    background-color: #e2e6ea;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .search-bar select, .search-bar input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.genre-options {
+    margin-left: 10px;
+}
+
+.genre-options select {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* contact form */
+
+.contact {
+    background-color: #a88799;
+    padding: 2rem;
+    width: 111rem;
+    margin-top: 10rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #090808;
+}
+
+.contact .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #121212;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.contact button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #0056b3;
+}
+
+/* footer */
+/* Footer Styling */
+.footer {
+    background-color: #414345; /* Background color for the footer */
+    padding: 20px 0;
+    color: #ffffff; /* White text color for footer content */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo h2 {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-size: 1.5em;
+    text-align: left;
+    flex: 1;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex: 2;
+}
+
+.footer-nav ul li {
+    margin: 0 15px;
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff; /* White text color for navigation links */
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: #d1ecf1; /* Light color on hover */
+}
+
+.footer-social-media {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-social-media a {
+    margin: 0 5px;
+}
+
+.footer-social-media a img {
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social-media a img:hover {
+    opacity: 0.7; /* Slightly dim the icon on hover */
+}
+
+.footer-info {
+    margin-top: 15px;
+    font-size: 0.8em;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo h2 {
+        margin-bottom: 1rem;
+    }
+
+    .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .footer-nav ul li {
+        margin: 10px 0;
+    }
+
+    .footer-social-media {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
+/* grid container */
+
+/* General styling for the book container */
+#book-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns per row */
+    gap: 20px;
+    justify-content: center; /* Center the grid content */
+    max-width: 1200px; /* Adjust this value based on your preferred width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+}
+
+/* Styling each book item */
+.book {
+    background-color: rgb(251, 247, 247);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    width: 200px; /* Set a fixed width to maintain size */
+    height: auto; /* Auto height to fit content */
+}
+
+.book:hover {
+    transform: translateY(-5px);
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.book h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.book p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+
+
+/* General container styles */
+.book-details-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Title */
+.book-details-container h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Cover images */
+.book-cover-images img {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    max-width: 150px;
+    height: auto;
+}
+
+/* Paragraph styling */
+.book-details-container p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Links */
+.book-details-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.book-details-container a:hover {
+    text-decoration: underline;
+}
+
+/* Close button */
+#close-details {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+#close-details:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Background image section */
+
+
+.background-image {
+    background-position: center; 
+    background-image: url(https://png.pngtree.com/background/20230425/original/pngtree-two-women-sitting-at-a-table-in-a-library-picture-image_2479553.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover; /* Ensures the GIF covers the entire element */
+    width: 100vw; 
+    height: 90vh ;
+    z-index: 0;
+}
+
+
+
+.user-details-container {
+    width: 90%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-overview,
+  .borrowing-history,
+  .reservation-details,
+  .notifications-alerts,
+  .account-management,
+  .activity-logs {
+    margin-bottom: 20px;
+  }
+  
+  .profile-picture {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .basic-info h2 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  
+  .basic-info p,
+  .account-status p,
+  .borrowing-history ul li,
+  .reservation-details ul li,
+  .notifications-alerts p,
+  .activity-logs p {
+    margin: 5px 0;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+
+
+/* body user */
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.search-bar input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info .username {
+    font-size: 1.2em;
+}
+
+.container {
+    display: flex;
+    margin-top: 20px;
+}
+
+
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+
+.stats-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h2 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.lists-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.users-list, .books-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex-grow: 1;
+    margin: 0 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.users-list h3, .books-list h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f1f1f1;
+}
+
+thead th, tbody td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.top-choices, .overdue-books, .books-issued, .visitors-stats {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-choices h3, .overdue-books h3, .books-issued h3, .visitors-stats h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.book-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-cards .book-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+
+
+/* for the privacy policy*/
+.shared-section.privacy-policy {
+    background: linear-gradient(135deg, #2f3030, #6ba6e2); /* Light blue-gray gradient */
+    width: 99.3vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em; 
+    font-family: 'Roboto', sans-serif; 
+    color: #ffffff; 
+}
+
+
+.shared-section.privacy-policy h1 {
+    font-family: 'Roboto', sans-serif; 
+    color: #ffffff; 
+    margin-left: 43%;
+}
+
+
+/* for the terms of service */
+.shared-section.terms-of-service {
+    background: linear-gradient(135deg, #2f3030, #6ba6e2); /* Light blue-gray gradient */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 99.3vw;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    color: floralwhite;
+}
+
+.shared-section.terms-of-service h1 {
+    font-family: 'Roboto', sans-serif; 
+    color: #ffffff;
+    margin-left: 43%;
+}
+
+
+
+
+.gif-container {
+    position: relative;
+    height: 100vh; /* Ensure the container has a height */
+    overflow: hidden; /* To prevent the image from overflowing the container */
+}
+
+.gif-img {
+    position: absolute; /* Enable absolute positioning */
+    left: 0; /* Aligns the image to the left */
+    height: 200vh; /* Increases the height */
+    width: 50vw; /* Increases the width */
+    top: 100%; /* Moves the image down */
+    transform: translateY(-50%); /* Adjusts the centering */
+}
+
+
+.text-overlay {
+    position: absolute;
+    top: 15%; /* Center the text vertically */
+    left: 50%; /* Center the text horizontally */
+    transform: translate(-50%, -50%); /* Adjust the centering */
+    color: rgb(26, 25, 25)   ; /* White color */
+    font-size: 2em; /* Adjust font size as needed */
+    font-weight: bold; /* Bold text */
+    font-family: 'Roboto', sans-serif; /* Use a clean, modern font */
+    text-align: center;
+    animation: text-animation 1.5s infinite ease-in-out; /* Add animation */
+}
+
+
